@@ -1,6 +1,7 @@
 When I tried using the standard 64 bit images there was some issue with sox playing back flac files at 96KHz / 24 bit resolution. So I tried 32 bit 
 and it works, hence I created this, my first docker image.
 
+
 It was started with gfjardim / logitechmediaserver image
 
     docker run -d --rm=true \

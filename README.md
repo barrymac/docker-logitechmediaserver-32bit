@@ -1,16 +1,14 @@
-# docker-logitechmediaserver
+When I tried using the standard 64 bit images there was some issue with sox playing back flac files at 96KHz / 24 bit resolution. So I tried 32 bit 
+and it works, hence I created this, my first docker image.
 
-Docker image for Logitech Media Server (SqueezeCenter, SqueezeboxServer, SlimServer)
+It was started with gfjardim / logitechmediaserver image
 
-Run with:
-
-```
-docker run -t -i --rm=true --net="bridge" \
+    docker run -d --rm=true \
       -p 3483:3483/tcp \
       -p 9000:9000/tcp \
       -p 9090:9090/tcp \
-      -v "/mnt/user/appdata/LogitechMediaServer":"/config":rw \
+      -v "<yourconfigdir>":"/config":rw \
+      -v "<yourmusicdir>":"/cmusic":ro \
       -v "/etc/localtime":"/etc/localtime":ro \
-      gfjardim/logitechmediaserver
-```
+      barrymac/slim32
 

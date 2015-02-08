@@ -16,10 +16,10 @@ To run with a mysql backend you can link to an existing mysql docker container a
 following in the server.prefs that are in <yourconfigdir>/prefs 
 
     dbhighmem: 0
-    dbpassword: mysql
+    dbpassword: <yourmysqlpassword>
     dbsource: dbi:mysql:hostname=mysql;port=3306;database=slimserver
     dbtype: MySQL
-    dbusername: root
+    dbusername: <yourchosenmysqluser>
 
 
     docker run -d --rm=true \
@@ -29,7 +29,7 @@ following in the server.prefs that are in <yourconfigdir>/prefs
       -v "<yourconfigdir>":"/config":rw \
       -v "<yourmusicdir>":"/cmusic":ro \
       -v "/etc/localtime":"/etc/localtime":ro \
-      --link <yourmysqlhost>
+      --link <yourmysqlhost>:mysql
       barrymac/slim32
 
 

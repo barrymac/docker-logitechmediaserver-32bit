@@ -24,6 +24,7 @@ sh -c "echo deb http://debian.slimdevices.com stable main >> /etc/apt/sources.li
 apt-get update -qq
 apt-get install -qy --force-yes logitechmediaserver
 apt-get install -qy lame
+apt-get install -qy libdbd-mysql-perl
 
 #########################################
 ##                 CLEANUP             ##
